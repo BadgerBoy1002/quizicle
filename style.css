@@ -1,12 +1,47 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: #000;
+}
+
+* {
+    font-family: "monospace";
 }
 
 #ui {
     position: absolute;
     top: 25%;
-    left: 25%;
-    right: 25%;
+    left: 15%;
+    right: 15%;
     bottom: 25%;
+}
+
+#ui .title {
+    font-size: 3em;
+    color: #0F0;
+}
+
+#ui .content form .row {
+    margin-top: 1em;
+    line-height: 2em;
+    color: #00F;
+}
+
+#ui .content form input {
+    float: right;
+    border: none;
+    border-radius: none;
+    padding: 1em;
+    background: #F00;
+    color: #FFF;
+}
+
+#ui .content form input[type=text] {
+    width: 50%;
+    padding: 0.5em;
+    -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+    background: #FFF;
+    color: #000;
 }

@@ -34,21 +34,32 @@
 
             var form = document.createElement("form");
             for (question in questions) {
+                var row = document.createElement("div");
+                row.className = "row";
+                
                 var text = document.createElement("input");
                 text.type = "text";
                 text.name = question;
-                var label = document.createElement("label");
-                label.for = question;
-                setText(label, questions[question] + " ");
-                form.appendChild(label);
-                form.appendChild(text);
-                form.appendChild(document.createElement("br"));
+                row.appendChild(text);
+
+                if (questions[question]) {
+                    var label = document.createElement("label");
+                    label.for = question;
+                    setText(label, questions[question] + " ");
+                    row.appendChild(label);
+                }
+
+                form.appendChild(row);
             }
 
             var submit = document.createElement("input");
+            var row = document.createElement("div");
+            row.className = "row";
             submit.type = "submit";
             submit.value = button || "Submit";
-            form.appendChild(submit);
+            row.appendChild(submit);
+            form.appendChild(row);;
+
             form.onsubmit = function () {
                 var inputs = form.getElementsByTagName("input"), answers = {};
                 for (var i = 0; i < inputs.length; i++) {
