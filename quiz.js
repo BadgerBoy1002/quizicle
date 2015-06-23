@@ -1,3 +1,4 @@
+   alert("WELCOME to Quizicle!")
 var qOne = prompt("Enter a question!");
 var myqOne = prompt("Enter an answer!");
    alert("The test is about to begin!");
