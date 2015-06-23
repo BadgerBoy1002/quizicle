@@ -27,4 +27,4 @@ else
 if(why === why) {
    alert("Your feedback is much appreciated!");
 }
-   alert("Thank you for using this program");
+   alert("Thank you for using this program!");
