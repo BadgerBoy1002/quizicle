@@ -21,19 +21,24 @@ html, body {
     color: #0F0;
 }
 
-#ui .content form .row {
+#ui .content {
+    color: #F0F;
+}
+
+#ui .content .row {
     margin-top: 1em;
     line-height: 2em;
     color: #00F;
 }
 
-#ui .content form input {
+#ui .content input {
     float: right;
     border: none;
     border-radius: none;
     padding: 1em;
     background: #F00;
     color: #FFF;
+    margin-left: 1em;
 }
 
 #ui .content form input[type=text] {

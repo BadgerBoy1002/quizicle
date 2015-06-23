@@ -42,12 +42,10 @@
                 text.name = question;
                 row.appendChild(text);
 
-                if (questions[question]) {
-                    var label = document.createElement("label");
-                    label.for = question;
-                    setText(label, questions[question] + " ");
-                    row.appendChild(label);
-                }
+                var label = document.createElement("label");
+                label.for = question;
+                setText(label, questions[question] || "" + "\u00a0");
+                row.appendChild(label);
 
                 form.appendChild(row);
             }
@@ -73,6 +71,29 @@
                 return false;
             };
             content.appendChild(form);
+        },
+
+        confirm: function (title, c, callback) {
+            var that = this;
+            this.setTitle(title);
+            setText(content, c);
+
+            var yes = document.createElement("input"), no = document.createElement("input");
+            yes.value = "Yes";
+            no.value = "No";
+            yes.type = no.type = "button";
+            
+            yes.onclick = no.onclick = function () {
+                that.reset();
+                callback(this == yes);
+                return false;
+            };
+
+            var row = document.createElement("div");
+            row.className = "row";
+            row.appendChild(no);
+            row.appendChild(yes);
+            content.appendChild(row);
         }
     };
 })();
