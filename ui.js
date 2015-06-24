@@ -1,4 +1,5 @@
 (function () {
+    var CALLBACK = function () {};
     var ui = document.getElementById("ui");
     var title = ui.getElementsByClassName("title")[0];
     var content = ui.getElementsByClassName("content")[0];
@@ -24,6 +25,7 @@
         },
 
         alert: function (c, title, button, callback) {
+            callback = callback || CALLBACK;
             setText(content, c);
             this.setTitle(title);
 
@@ -44,6 +46,7 @@
         },
 
         ask: function (questions, callback, title, button) {
+            callback = callback || CALLBACK;
             var that = this;
             this.reset(title);
 
@@ -89,6 +92,7 @@
         },
 
         confirm: function (title, c, callback) {
+            callback = callback || CALLBACK;
             var that = this;
             this.setTitle(title);
             setText(content, c);
