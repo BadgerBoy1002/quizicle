@@ -28,3 +28,4 @@ ui.ask({
         });
     }, "The test has begun!");
 }, "WELCOME to Quizicle!");
+
