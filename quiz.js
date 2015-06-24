@@ -13,7 +13,11 @@ ui.ask({
                     if (isNaN(feedback) || feedback < 0 || feedback > 10) {
                         ui.alert("You what mate?");
                     } else if (feedback <= 6) {
-                        ui.alert("Whaaaat?");
+                        ui.ask([null], function (response) {
+                            ui.alert("Your feedback is much appreciated!", "", "OK", function () {
+                                ui.alert("Thank you for using this program!");
+                            });
+                        }, "Why so...");
                     } else {
                         ui.alert("Thank you for using this program!");
                     }

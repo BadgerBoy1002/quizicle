@@ -23,9 +23,24 @@
             }
         },
 
-        alert: function (c, title) {
+        alert: function (c, title, button, callback) {
             setText(content, c);
             this.setTitle(title);
+
+            if (button) {
+                var ok = document.createElement("input");
+                ok.type = "button";
+                ok.value = button;
+                ok.onclick = function () {
+                    callback();
+                };
+                var row = document.createElement("div");
+                row.className = "row";
+                row.appendChild(ok);
+                content.appendChild(row);
+            } else {
+                callback();
+            }
         },
 
         ask: function (questions, callback, title, button) {
