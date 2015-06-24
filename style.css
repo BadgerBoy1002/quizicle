@@ -39,6 +39,7 @@ html, body {
     background: #F00;
     color: #FFF;
     margin-left: 1em;
+    outline: none;
 }
 
 #ui .content form input[type=text] {
