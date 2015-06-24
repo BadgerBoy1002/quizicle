@@ -10,7 +10,7 @@ ui.ask({
             if (give) {
                 ui.ask([null], function (response) {
                     var feedback = response[0];
-                    if (isNaN(feedback) || feedback < 0 || feedback > 10) {
+                    if (!feedback || isNaN(feedback) || feedback < 0 || feedback > 10) {
                         ui.alert("You what mate?");
                     } else if (feedback <= 6) {
                         ui.ask([null], function (response) {
