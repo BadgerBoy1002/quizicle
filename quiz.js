@@ -6,7 +6,7 @@ ui.ask({
     ui.ask({
         "answer": question
     }, function (response) {
-        ui.confirm(response.answer == answer ? "Correct!" : "WRONG!", "Would you like to give feedback?", function (give) {
+        ui.confirm(response.answer == answer ? "CORRECT!" : "WRONG!", "Would you like to give feedback?", function (give) {
             if (give) {
                 ui.ask([null], function (response) {
                     var feedback = response[0];
